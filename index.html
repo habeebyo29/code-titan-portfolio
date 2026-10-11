@@ -1,0 +1,824 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yusuf Habeeb">
+    <meta name="description" content="Explore the portfolio of Yusuf Habeeb, Code Titan — a developer building with Python, Flask, PostgreSQL and modern web technologies.">
+    <meta name="theme-color" content="#0b1120">
+
+    <meta property="og:title" content="Yusuf Habeeb | Code Titan">
+    <meta property="og:description" content="Projects, technical skills, tools and the software engineering journey of Yusuf Habeeb.">
+    <meta property="og:type" content="website">
+
+    <title>Yusuf Habeeb | Code Titan — Developer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="css/myportfolio.css">
+    <script src="scripts/myportfolio.js" defer></script>
+</head>
+
+<body>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="site-header" id="top">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="#home" class="brand" aria-label="Code Titan home">
+                <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="brand-copy">
+                    <strong>CODE <span>TITAN</span></strong>
+                    <small>Yusuf Habeeb</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#goals" class="nav-link">Goals</a>
+                <a href="#contact" class="nav-link nav-contact">Let's talk <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <div class="availability">
+                        <span class="availability-dot"></span>
+                        Open to learning, collaboration and opportunities
+                    </div>
+
+                    <p class="eyebrow"><span></span> HELLO, WORLD! I'M</p>
+
+                    <h1>Yusuf <span class="gradient-text">Habeeb</span></h1>
+
+                    <h2 class="hero-role">
+                        Aspiring <span id="typingText">Software Developer</span><span class="typing-cursor">|</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        I build useful digital experiences and develop my skills in
+                        web development, backend engineering and database systems.
+                        I believe in learning by building, solving real problems
+                        and improving with every project.
+                    </p>
+
+                    <div class="hero-tags">
+                        <span><i class="fa-brands fa-python"></i> Python</span>
+                        <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                        <span><i class="fa-solid fa-laptop-code"></i> Web Development</span>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">
+                            Explore my projects <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a class="btn btn-outline" href="#contact">
+                            Let's talk <i class="fa-regular fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <span>CONNECT WITH ME</span>
+                        <a href="mailto:habeebyo29@gmail.com" aria-label="Email Yusuf Habeeb" title="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/habee_byo29/"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="Instagram profile" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- LARGE PROFILE PHOTO AREA -->
+                <div class="hero-visual reveal">
+                    <div class="portrait-label portrait-label-top">
+                        <span class="label-icon"><i class="fa-solid fa-code"></i></span>
+                        <span><strong>Code Titan</strong><small>Building. Learning. Growing.</small></span>
+                    </div>
+
+                    <div class="portrait-frame">
+                        <div class="portrait-backdrop"></div>
+
+                        <img
+                            class="profile-photo"
+                            src="/image/Man working at a modern desk.png"
+                            alt="Portrait of Yusuf Habeeb"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                        >
+
+                        <div class="portrait-placeholder">
+                            <i class="fa-solid fa-user"></i>
+                            <strong>Your photo goes here</strong>
+                            <span>Add images/yusuf-habeeb.jpg</span>
+                        </div>
+
+                        <div class="portrait-shade"></div>
+                        <div class="portrait-caption">
+                            <span class="caption-line"></span>
+                            <div>
+                                <small>DEVELOPER PORTFOLIO</small>
+                                <strong>Turning ideas into projects.</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="portrait-label portrait-label-bottom">
+                        <span class="status-icon"><i class="fa-solid fa-laptop-code"></i></span>
+                        <span><strong>Always learning</strong><small>One project at a time</small></span>
+                    </div>
+
+                    <span class="floating-code floating-code-one">&lt;/&gt;</span>
+                    <span class="floating-code floating-code-two">{ }</span>
+                    <span class="floating-spark spark-one">✦</span>
+                    <span class="floating-spark spark-two">✧</span>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#about">
+                <span>SCROLL TO EXPLORE</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </section>
+
+        <!-- QUICK FACTS -->
+        <section class="quick-facts">
+            <div class="container facts-grid">
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-code"></i></span>
+                    <div><strong>Build</strong><small>Practical projects</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-book-open"></i></span>
+                    <div><strong>Learn</strong><small>Continuously improve</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                    <div><strong>Solve</strong><small>Real-world problems</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-rocket"></i></span>
+                    <div><strong>Grow</strong><small>One step at a time</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section section-light" id="about">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> GET TO KNOW ME</p>
+                    <h2>A little about <span class="gradient-text">me.</span></h2>
+                    <p>My interests, mindset and direction as a developer.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-main card reveal">
+                        <div class="about-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                        <h3>I'm Yusuf Habeeb</h3>
+                        <p>
+                            I'm a developing software creator who enjoys turning ideas
+                            into functional websites and digital solutions. My current
+                            focus is strengthening my foundations in frontend development,
+                            Python, Flask and relational databases.
+                        </p>
+                        <p>
+                            I enjoy understanding how applications work behind the scenes:
+                            how interfaces connect to APIs, how data is stored, and how
+                            separate parts of a system work together.
+                        </p>
+                        <p>
+                            My approach is simple: build, test, learn from mistakes and
+                            keep improving. I'm working towards becoming a well-rounded
+                            software engineer with strong backend and system-design skills.
+                        </p>
+
+                        <div class="about-signature">
+                            <span class="signature-mark">YH</span>
+                            <span><strong>Yusuf Habeeb</strong><small>Code Titan</small></span>
+                        </div>
+                    </div>
+
+                    <div class="about-side">
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-compass"></i></span>
+                            <h3>My approach</h3>
+                            <p>Build practical solutions, write understandable code and improve through consistent practice.</p>
+                        </article>
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-puzzle-piece"></i></span>
+                            <h3>What interests me</h3>
+                            <p>Web applications, backend systems, databases, cloud infrastructure and AI-powered tools.</p>
+                        </article>
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-seedling"></i></span>
+                            <h3>My mindset</h3>
+                            <p>Stay curious, ask questions, solve problems and keep learning instead of pretending to know everything.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> TECHNICAL FOUNDATION</p>
+                    <h2>Skills I'm <span class="gradient-text">developing.</span></h2>
+                    <p>A practical set of technologies I use or am actively learning.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-palette"></i></span>
+                            <span class="skill-number">01</span>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Creating responsive layouts and interactive browser experiences.</p>
+                        <div class="tag-list">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+                            <span class="skill-number">02</span>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>Learning how to create application logic, routes, APIs and server-side features.</p>
+                        <div class="tag-list">
+                            <span>Python</span><span>Flask</span><span>REST APIs</span><span>Authentication</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+                            <span class="skill-number">03</span>
+                        </div>
+                        <h3>Database Systems</h3>
+                        <p>Working towards stronger knowledge of relational data, queries and database design.</p>
+                        <div class="tag-list">
+                            <span>PostgreSQL</span><span>SQL</span><span>SQLite</span><span>Data Modelling</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <span class="skill-number">04</span>
+                        </div>
+                        <h3>Development Workflow</h3>
+                        <p>Practising the everyday tools and habits that help keep projects organised.</p>
+                        <div class="tag-list">
+                            <span>Git</span><span>GitHub</span><span>Debugging</span><span>Deployment</span>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="section-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Skills listed here represent my development focus, not a claim of expert-level proficiency in every technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section class="section section-light" id="tools">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> MY WORKSPACE</p>
+                    <h2>Tools of the <span class="gradient-text">trade.</span></h2>
+                    <p>Tools that support coding, testing, version control and deployment.</p>
+                </div>
+
+                <div class="tools-grid">
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-vscode"><i class="fa-solid fa-code"></i></span>
+                        <strong>VS Code</strong><small>Code editor</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-git"><i class="fa-brands fa-git-alt"></i></span>
+                        <strong>Git</strong><small>Version control</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-github"><i class="fa-brands fa-github"></i></span>
+                        <strong>GitHub</strong><small>Code repositories</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-terminal"><i class="fa-solid fa-terminal"></i></span>
+                        <strong>PowerShell</strong><small>Command line</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-python"><i class="fa-brands fa-python"></i></span>
+                        <strong>Python</strong><small>Backend language</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-database"><i class="fa-solid fa-database"></i></span>
+                        <strong>PostgreSQL</strong><small>Relational database</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-browser"><i class="fa-solid fa-window-maximize"></i></span>
+                        <strong>DevTools</strong><small>Browser debugging</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-deploy"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                        <strong>Netlify / Hosting</strong><small>Website deployment</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> SELECTED WORK</p>
+                    <h2>Projects in my <span class="gradient-text">journey.</span></h2>
+                    <p>Practical projects that help me learn, experiment and improve.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-naijacart">
+                            <div class="project-browser">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="mini-store-logo">Naija<span>Cart</span></div>
+                                <div class="mini-store-hero">
+                                    <small>TECHNOLOGY MARKETPLACE</small>
+                                    <strong>Tech you want.<br>Prices you'll love.</strong>
+                                    <span class="mini-store-button">Explore products →</span>
+                                </div>
+                                <div class="mini-product-row"><span>▰</span><span>▱</span><span>▰</span></div>
+                            </div>
+                            <span class="project-category">E-COMMERCE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>NaijaCart</h3>
+                                <span class="project-index">01</span>
+                            </div>
+                            <p>
+                                An online technology marketplace project focused on
+                                product browsing and an e-commerce experience.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python / Flask</span></div>
+                            <a class="project-link" href="https://naijacart.onrender.com/" target="_blank" rel="noopener noreferrer">
+                                Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-mosque">
+                            <div class="mosque-art">
+                                <span class="mosque-star">✦</span>
+                                <i class="fa-solid fa-mosque"></i>
+                                <div class="mosque-lines"></div>
+                                <strong>FSSCCM</strong>
+                                <small>CENTRAL MOSQUE</small>
+                            </div>
+                            <span class="project-category">COMMUNITY WEBSITE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>FSSCCM Central Mosque</h3>
+                                <span class="project-index">02</span>
+                            </div>
+                            <p>
+                                A mosque website project designed to present community
+                                information, prayer times, programmes and useful resources.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span></div>
+                            <a class="project-link" href="https://fssmchb.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-belair">
+                            <div class="belair-art">
+                                <small>QUIET MOTION</small>
+                                <strong>BELAIR</strong>
+                                <span>LESS NOISE.<br>MORE PRESENCE.</span>
+                                <div class="belair-art-line"></div>
+                            </div>
+                            <span class="project-category">BRAND WEBSITE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>Belair</h3>
+                                <span class="project-index">03</span>
+                            </div>
+                            <p>
+                                A refined streetwear brand website concept focused on
+                                visual storytelling, clean presentation and customer enquiries.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span></div>
+                            <a class="project-link" href="#contact">
+                                Ask me about this project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                <p class="section-note">
+                    Project descriptions summarise the work and learning focus. Technology tags indicate the project stack or development focus and should be adjusted if a project's implementation differs.
+                </p>
+            </div>
+        </section>
+
+        <!-- CAREER GOALS -->
+        <section class="section section-light" id="goals">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> THE BIGGER PICTURE</p>
+                    <h2>Where I'm <span class="gradient-text">heading.</span></h2>
+                    <p>A long-term learning roadmap built around strong engineering fundamentals.</p>
+                </div>
+
+                <div class="roadmap">
+                    <div class="roadmap-line"></div>
+
+                    <article class="roadmap-item reveal">
+                        <div class="roadmap-marker"><i class="fa-solid fa-laptop-code"></i></div>
+                        <div class="roadmap-card card">
+                            <span class="roadmap-stage">STAGE 01 · FOUNDATIONS</span>
+                            <h3>Full-Stack Development</h3>
+                            <p>Strengthen HTML, CSS, JavaScript, Python, Flask, SQL, APIs, testing and deployment through real projects.</p>
+                            <div class="tag-list"><span>Frontend</span><span>Backend</span><span>SQL</span></div>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item reveal">
+                        <div class="roadmap-marker"><i class="fa-solid fa-server"></i></div>
+                        <div class="roadmap-card card">
+                            <span class="roadmap-stage">STAGE 02 · ENGINEERING</span>
+                            <h3>Backend Engineering</h3>
+                            <p>Develop deeper knowledge of secure APIs, authentication, data modelling, performance and maintainable application architecture.</p>
+                            <div class="tag-list"><span>Python</span><span>Flask</span><span>PostgreSQL</span></div>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item reveal">
+                        <div class="roadmap-marker"><i class="fa-solid fa-cloud"></i></div>
+                        <div class="roadmap-card card">
+                            <span class="roadmap-stage">STAGE 03 · SYSTEMS</span>
+                            <h3>Cloud & System Architecture</h3>
+                            <p>Learn cloud platforms, networking, Linux, monitoring, system design, reliability and how to deploy applications at scale.</p>
+                            <div class="tag-list"><span>Cloud</span><span>Linux</span><span>System Design</span></div>
+                        </div>
+                    </article>
+
+                    <article class="roadmap-item reveal">
+                        <div class="roadmap-marker"><i class="fa-solid fa-brain"></i></div>
+                        <div class="roadmap-card card">
+                            <span class="roadmap-stage">STAGE 04 · LONG-TERM VISION</span>
+                            <h3>AI Systems & Technical Leadership</h3>
+                            <p>Explore AI-powered applications, intelligent agents, architecture decisions, team collaboration and eventually technical leadership.</p>
+                            <div class="tag-list"><span>AI Systems</span><span>Architecture</span><span>Leadership</span></div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="goal-callout reveal">
+                    <span class="goal-callout-icon"><i class="fa-solid fa-bullseye"></i></span>
+                    <div>
+                        <h3>My principle</h3>
+                        <p>Master the fundamentals, build real things, understand the systems behind them, and earn the next step through consistent practice.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+            <div class="contact-glow"></div>
+            <div class="container">
+                <div class="contact-card reveal">
+                    <div class="contact-content">
+                        <p class="eyebrow"><span></span> HAVE AN IDEA?</p>
+                        <h2>Let's build something <span class="gradient-text">meaningful.</span></h2>
+                        <p>
+                            Have a project idea, a collaboration in mind or an opportunity
+                            to discuss? Send me an email or connect with me on Instagram.
+                        </p>
+
+                        <div class="contact-actions">
+                            <a class="btn btn-primary" href="mailto:habeebyo29@gmail.com?subject=Let's%20Talk%20-%20Code%20Titan">
+                                <i class="fa-solid fa-envelope"></i> Email me
+                            </a>
+                            <a class="btn btn-outline" href="https://www.instagram.com/habee_byo29/"
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="contact-side">
+                        <div class="contact-info-row">
+                            <span><i class="fa-solid fa-envelope"></i></span>
+                            <div><small>EMAIL ADDRESS</small><a href="mailto:habeebyo29@gmail.com">habeebyo29@gmail.com</a></div>
+                        </div>
+                        <div class="contact-info-row">
+                            <span><i class="fa-brands fa-instagram"></i></span>
+                            <div><small>INSTAGRAM</small><a href="https://www.instagram.com/habee_byo29/" target="_blank" rel="noopener noreferrer">@habee_byo29</a></div>
+                        </div>
+                        <div class="contact-info-row">
+                            <span><i class="fa-solid fa-code"></i></span>
+                            <div><small>BRAND</small><strong>Code Titan</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<!-- ================= CODE TITAN FOOTER ================= -->
+<footer class="ct-footer">
+    <div class="ct-footer-inner">
+
+        <h2 class="ct-brand">Code <span>Titan</span></h2>
+        <p class="ct-tagline">Building ideas into digital experiences.</p>
+
+        <!-- SOCIAL APP LINKS -->
+        <div class="ct-socials">
+
+            <a class="ct-social-link"
+               href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.5H7v11H3.4v-11Zm5.8 0h3.5V11h.1a3.9 3.9 0 0 1 3.5-1.9c3.7 0 4.4 2.4 4.4 5.5v5.9h-3.7v-5.2c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.3H9.2v-11Z"/>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="https://www.instagram.com/habee_byo29/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17.6" cy="6.7" r="1.2"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="https://github.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.6 0-1.2.4-2.2 1.2-3-.1-.3-.5-1.5.1-3 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.7 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.6 5.3-5.3 5.6.4.3.8 1 .8 2v3.3c0 .3.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="mailto:habeebyo29@gmail.com"
+               aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Email</span>
+            </a>
+
+        </div>
+
+        <button class="ct-back-top" id="ctBackTop" type="button">
+            Back to Top
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 19V5M6 11l6-6 6 6"
+                      fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="ct-footer-bottom">
+            <p>&copy; <span id="ctYear"></span> Code Titan. All rights reserved.</p>
+            <p>Designed and built by <strong>Yusuf Habeeb</strong>.</p>
+        </div>
+
+    </div>
+</footer>
+
+<style>
+/* Scoped styles to avoid conflicts with your portfolio CSS */
+.ct-footer,
+.ct-footer * {
+    box-sizing: border-box;
+}
+
+.ct-footer {
+    width: 100%;
+    padding: 55px 20px 22px;
+    background: linear-gradient(135deg, #061735, #082653 60%, #0b3470);
+    color: #f2f7ff;
+    text-align: center;
+    font-family: inherit;
+}
+
+.ct-footer-inner {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.ct-brand {
+    margin: 0 0 10px;
+    font-size: 32px;
+    line-height: 1.3;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.ct-brand span {
+    color: #54e0d2;
+}
+
+.ct-tagline {
+    margin: 0 0 30px;
+    color: #c1d2ec;
+    line-height: 1.7;
+}
+
+.ct-socials {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 0 auto 28px;
+}
+
+.ct-footer .ct-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 145px;
+    padding: 13px 18px;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 12px;
+    background: rgba(255,255,255,.06);
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.3;
+    transition: background .2s ease, color .2s ease,
+                border-color .2s ease, transform .2s ease;
+}
+
+.ct-social-link svg {
+    display: block;
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.ct-footer .ct-social-link:hover {
+    background: #54e0d2;
+    border-color: #54e0d2;
+    color: #061735;
+    transform: translateY(-3px);
+}
+
+.ct-back-top {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 0;
+    border-radius: 30px;
+    background: #54e0d2;
+    color: #061735;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.ct-back-top svg {
+    width: 18px;
+    height: 18px;
+}
+
+.ct-back-top:hover {
+    background: #ffffff;
+    transform: translateY(-2px);
+}
+
+.ct-footer-bottom {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,.15);
+}
+
+.ct-footer-bottom p {
+    margin: 6px 0;
+    color: #c1d2ec;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.ct-footer-bottom strong {
+    color: #54e0d2;
+}
+
+@media (max-width: 600px) {
+    .ct-footer {
+        padding: 40px 15px 20px;
+    }
+
+    .ct-brand {
+        font-size: 28px;
+    }
+
+    .ct-socials {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        width: 100%;
+    }
+
+    .ct-footer .ct-social-link {
+        min-width: 0;
+        width: 100%;
+        padding: 13px 8px;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .ct-social-link svg {
+        width: 20px;
+        height: 20px;
+        flex-basis: 20px;
+    }
+}
+
+@media (max-width: 340px) {
+    .ct-footer .ct-social-link {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+</style>
+
+<script>
+(function () {
+    const year = document.getElementById("ctYear");
+    const button = document.getElementById("ctBackTop");
+
+    if (year) {
+        year.textContent = new Date().getFullYear();
+    }
+
+    if (button) {
+        button.addEventListener("click", function () {
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth"
+            });
+        });
+    }
+})();
+</script>
+</body>
+</html>
