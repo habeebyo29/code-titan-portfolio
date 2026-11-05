@@ -1,0 +1,10 @@
+.env
+**/.env
+venv/
+**/venv/
+__pycache__/
+**/__pycache__/
+*.pyc
+flask_portfolio/instance/*.db
+flask_portfolio/instance/*.sqlite
+flask_portfolio/instance/*.sqlite3

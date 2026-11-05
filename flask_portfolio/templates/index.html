@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Yusuf Habeeb">
+    <meta name="description" content="Explore the portfolio of Yusuf Habeeb, Code Titan — a developer building with Python, Flask, PostgreSQL and modern web technologies.">
+    <meta name="theme-color" content="#0b1120">
+
+    <meta property="og:title" content="Yusuf Habeeb | Code Titan">
+    <meta property="og:description" content="Projects, technical skills, tools and the software engineering journey of Yusuf Habeeb.">
+    <meta property="og:type" content="website">
+
+    <title>Yusuf Habeeb | Code Titan — Developer Portfolio</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/myportfolio.css') }}">
+    <script src="{{ url_for('static', filename='js/myportfolio.js') }}" defer></script>
+</head>
+
+<body>
+{% with messages = get_flashed_messages(with_categories=true) %}{% if messages %}<div class="flash-stack">{% for category, message in messages %}<div class="flash-message {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}{% endwith %}
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <header class="site-header" id="top">
+        <nav class="navbar container" aria-label="Main navigation">
+            <a href="#home" class="brand" aria-label="Code Titan home">
+                <span class="brand-icon"><i class="fa-solid fa-code"></i></span>
+                <span class="brand-copy">
+                    <strong>CODE <span>TITAN</span></strong>
+                    <small>Yusuf Habeeb</small>
+                </span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="navLinks">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="nav-tools">
+                <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to light mode" title="Switch theme">
+                    <i class="fa-solid fa-sun" aria-hidden="true"></i><span class="theme-toggle-label">Light mode</span>
+                </button>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#tools" class="nav-link">Tools</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#goals" class="nav-link">Goals</a>
+                <a href="#contact" class="nav-link nav-contact">Let's talk <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero section" id="home">
+            <div class="hero-glow hero-glow-one"></div>
+            <div class="hero-glow hero-glow-two"></div>
+
+            <div class="container hero-grid">
+                <div class="hero-content reveal">
+                    <div class="availability">
+                        <span class="availability-dot"></span>
+                        Open to learning, collaboration and opportunities
+                    </div>
+
+                    <p class="eyebrow"><span></span> HELLO, WORLD! I'M</p>
+
+                    <h1>Yusuf <span class="gradient-text">Habeeb</span></h1>
+
+                    <h2 class="hero-role">
+                        Aspiring <span id="typingText">Software Developer</span><span class="typing-cursor">|</span>
+                    </h2>
+
+                    <p class="hero-description">
+                        I build useful digital experiences and develop my skills in
+                        web development, backend engineering and database systems.
+                        I believe in learning by building, solving real problems
+                        and improving with every project.
+                    </p>
+
+                    <div class="hero-tags">
+                        <span><i class="fa-brands fa-python"></i> Python</span>
+                        <span><i class="fa-solid fa-database"></i> PostgreSQL</span>
+                        <span><i class="fa-solid fa-laptop-code"></i> Web Development</span>
+                    </div>
+                    <p class="language-note"><i class="fa-solid fa-language"></i> Arabic: understands spoken and written Arabic</p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="#projects">
+                            Explore my projects <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a class="btn btn-outline" href="#contact">
+                            Let's talk <i class="fa-regular fa-paper-plane"></i>
+                        </a>
+                    </div>
+
+                    <div class="hero-socials">
+                        <span>CONNECT WITH ME</span>
+                        <a href="mailto:habeebyo29@gmail.com" aria-label="Email Yusuf Habeeb" title="Email">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.instagram.com/habee_byo29/"
+                           target="_blank" rel="noopener noreferrer"
+                           aria-label="Instagram profile" title="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-visual developer-visual reveal" aria-label="Animated Code Titan developer illustration">
+                    <div class="dev-orbit orbit-one"></div><div class="dev-orbit orbit-two"></div><div class="dev-glow"></div>
+                    <div class="dev-terminal">
+                        <div class="dev-terminal-bar"><span></span><span></span><span></span><small>code-titan.js</small></div>
+                        <div class="dev-terminal-body">
+                            <p><span class="code-muted">01</span> <span class="code-purple">const</span> developer = {</p>
+                            <p><span class="code-muted">02</span> &nbsp; name: <span class="code-green">"Yusuf Habeeb"</span>,</p>
+                            <p><span class="code-muted">03</span> &nbsp; brand: <span class="code-green">"Code Titan"</span>,</p>
+                            <p><span class="code-muted">04</span> &nbsp; stack: [</p>
+                            <p><span class="code-muted">05</span> &nbsp;&nbsp; <span class="code-orange">"HTML"</span>, <span class="code-orange">"CSS"</span>,</p>
+                            <p><span class="code-muted">06</span> &nbsp;&nbsp; <span class="code-orange">"JavaScript"</span>,</p>
+                            <p><span class="code-muted">07</span> &nbsp;&nbsp; <span class="code-orange">"Python"</span>, <span class="code-orange">"Flask"</span></p>
+                            <p><span class="code-muted">08</span> &nbsp; ],</p>
+                            <p><span class="code-muted">09</span> &nbsp; mindset: <span class="code-green">"Always learning"</span></p>
+                            <p><span class="code-muted">10</span> };</p><p class="dev-terminal-cursor"><span class="code-purple">build</span>(ideas);<b></b></p>
+                        </div>
+                    </div>
+                    <div class="dev-float dev-float-top"><i class="fa-solid fa-code"></i><span>BUILD</span></div>
+                    <div class="dev-float dev-float-bottom"><i class="fa-solid fa-database"></i><span>CREATE</span></div>
+                    <div class="dev-identity-caption"><span class="availability-dot"></span> Building. Learning. Growing.</div>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#about">
+                <span>SCROLL TO EXPLORE</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+        </section>
+
+        <!-- QUICK FACTS -->
+        <section class="quick-facts">
+            <div class="container facts-grid">
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-code"></i></span>
+                    <div><strong>Build</strong><small>Practical projects</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-book-open"></i></span>
+                    <div><strong>Learn</strong><small>Continuously improve</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-lightbulb"></i></span>
+                    <div><strong>Solve</strong><small>Real-world problems</small></div>
+                </div>
+                <div class="fact">
+                    <span class="fact-icon"><i class="fa-solid fa-rocket"></i></span>
+                    <div><strong>Grow</strong><small>One step at a time</small></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section section-light" id="about">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> GET TO KNOW ME</p>
+                    <h2>A little about <span class="gradient-text">me.</span></h2>
+                    <p>My interests, mindset and direction as a developer.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-main card reveal">
+                        <div class="about-icon"><i class="fa-solid fa-user-astronaut"></i></div>
+                        <h3>I'm Yusuf Habeeb</h3>
+                        <p>
+                            I'm a developing software developer who enjoys turning ideas
+                            into functional websites and digital solutions. My current
+                            focus is strengthening my foundations in frontend development,
+                            Python, Flask and relational databases.
+                        </p>
+                        <p>
+                            I enjoy understanding how applications work behind the scenes:
+                            how interfaces connect to APIs, how data is stored, and how
+                            separate parts of a system work together.
+                        </p>
+                        <p>
+                            My approach is simple: build, test, learn from mistakes and
+                            keep improving. I'm working towards becoming a well-rounded
+                            software engineer with strong backend and system-design skills.
+                        </p>
+
+                        <div class="about-signature">
+                            <span class="signature-mark">YH</span>
+                            <span><strong>Yusuf Habeeb</strong><small>Code Titan</small></span>
+                        </div>
+                    </div>
+
+                    <div class="about-side">
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-compass"></i></span>
+                            <h3>My approach</h3>
+                            <p>Build practical solutions, write understandable code and improve through consistent practice.</p>
+                        </article>
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-puzzle-piece"></i></span>
+                            <h3>What interests me</h3>
+                            <p>Web applications, backend systems, databases, cloud infrastructure and AI-powered tools.</p>
+                        </article>
+                        <article class="value-card card reveal">
+                            <span class="value-icon"><i class="fa-solid fa-seedling"></i></span>
+                            <h3>My mindset</h3>
+                            <p>Stay curious, ask questions, solve problems and keep learning instead of pretending to know everything.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> TECHNICAL FOUNDATION</p>
+                    <h2>Skills I'm <span class="gradient-text">developing.</span></h2>
+                    <p>A practical set of technologies I use or am actively learning.</p>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-palette"></i></span>
+                            <span class="skill-number">01</span>
+                        </div>
+                        <h3>Frontend Development</h3>
+                        <p>Creating responsive layouts and interactive browser experiences.</p>
+                        <div class="tag-list">
+                            <span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-server"></i></span>
+                            <span class="skill-number">02</span>
+                        </div>
+                        <h3>Backend Development</h3>
+                        <p>Learning how to create application logic, routes, APIs and server-side features.</p>
+                        <div class="tag-list">
+                            <span>Python</span><span>Flask</span><span>REST APIs</span><span>Authentication</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-database"></i></span>
+                            <span class="skill-number">03</span>
+                        </div>
+                        <h3>Database Systems</h3>
+                        <p>Working towards stronger knowledge of relational data, queries and database design.</p>
+                        <div class="tag-list">
+                            <span>PostgreSQL</span><span>SQL</span><span>SQLite</span><span>Data Modelling</span>
+                        </div>
+                    </article>
+
+                    <article class="skill-card card reveal">
+                        <div class="skill-card-heading">
+                            <span class="skill-icon"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <span class="skill-number">04</span>
+                        </div>
+                        <h3>Development Workflow</h3>
+                        <p>Practising the everyday tools and habits that help keep projects organised.</p>
+                        <div class="tag-list">
+                            <span>Git</span><span>GitHub</span><span>Debugging</span><span>Deployment</span>
+                        </div>
+                    </article>
+
+                </div>
+
+                <p class="section-note">
+                    <i class="fa-solid fa-circle-info"></i>
+                    Skills listed here represent my development focus, not a claim of expert-level proficiency in every technology.
+                </p>
+            </div>
+        </section>
+
+        <!-- TOOLS -->
+        <section class="section section-light" id="tools">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> MY WORKSPACE</p>
+                    <h2>Tools of the <span class="gradient-text">trade.</span></h2>
+                    <p>Tools that support coding, testing, version control and deployment.</p>
+                </div>
+
+                <div class="tools-grid">
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-vscode"><i class="fa-solid fa-code"></i></span>
+                        <strong>VS Code</strong><small>Code editor</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-git"><i class="fa-brands fa-git-alt"></i></span>
+                        <strong>Git</strong><small>Version control</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-github"><i class="fa-brands fa-github"></i></span>
+                        <strong>GitHub</strong><small>Code repositories</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-terminal"><i class="fa-solid fa-terminal"></i></span>
+                        <strong>PowerShell</strong><small>Command line</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-python"><i class="fa-brands fa-python"></i></span>
+                        <strong>Python</strong><small>Backend language</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-database"><i class="fa-solid fa-database"></i></span>
+                        <strong>PostgreSQL</strong><small>Relational database</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-browser"><i class="fa-solid fa-window-maximize"></i></span>
+                        <strong>DevTools</strong><small>Browser debugging</small>
+                    </div>
+                    <div class="tool-card reveal">
+                        <span class="tool-icon tool-deploy"><i class="fa-solid fa-cloud-arrow-up"></i></span>
+                        <strong>Netlify / Hosting</strong><small>Website deployment</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="section" id="projects">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow"><span></span> SELECTED WORK</p>
+                    <h2>Projects in my <span class="gradient-text">journey.</span></h2>
+                    <p>Practical projects that help me learn, experiment and improve.</p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-naijacart">
+                            <div class="project-browser">
+                                <div class="browser-dots"><span></span><span></span><span></span></div>
+                                <div class="mini-store-logo">Naija<span>Cart</span></div>
+                                <div class="mini-store-hero">
+                                    <small>TECHNOLOGY MARKETPLACE</small>
+                                    <strong>Tech you want.<br>Prices you'll love.</strong>
+                                    <span class="mini-store-button">Explore products →</span>
+                                </div>
+                                <div class="mini-product-row"><span>▰</span><span>▱</span><span>▰</span></div>
+                            </div>
+                            <span class="project-category">E-COMMERCE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>NaijaCart</h3>
+                                <span class="project-index">01</span>
+                            </div>
+                            <p>
+                                An online tech store with product browsing, a shopping cart and checkout,
+                                built with Flask, SQLite and JavaScript.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>SQLite</span></div>
+                            <a class="project-link" href="https://naijacart.onrender.com/" target="_blank" rel="noopener noreferrer">
+                                Visit NaijaCart <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-mosque">
+                            <div class="mosque-art">
+                                <span class="mosque-star">✦</span>
+                                <i class="fa-solid fa-mosque"></i>
+                                <div class="mosque-lines"></div>
+                                <strong>FSSCCM</strong>
+                                <small>CENTRAL MOSQUE</small>
+                            </div>
+                            <span class="project-category">COMMUNITY WEBSITE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>FSSCCM Central Mosque</h3>
+                                <span class="project-index">02</span>
+                            </div>
+                            <p>
+                                A mosque website project designed to present community
+                                information, prayer times, programmes and useful resources.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span></div>
+                            <a class="project-link" href="https://fssmchb.netlify.app/" target="_blank" rel="noopener noreferrer">
+                                Visit project <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-school">
+                            <div class="school-art">
+                                <span class="school-art-mark"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <strong>DAARUL ULUUM</strong><small>LIL ATFAAL SCHOOL</small>
+                                <span class="school-art-line"></span><small>FAITH &amp; KNOWLEDGE</small>
+                            </div>
+                            <span class="project-category">EDUCATION PLATFORM</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>Daarul Uluum Lil Atfaal School</h3>
+                                <span class="project-index">04</span>
+                            </div>
+                            <p>A school website and online portal bringing public school information together with admissions and role-based access for the school community.</p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flask</span><span>SQLite</span></div>
+                            <a class="project-link" href="https://github.com/habeebyo29/daarululuumschool" target="_blank" rel="noopener noreferrer">
+                                View project repository <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </div>
+                    </article>
+
+                    
+
+                    <article class="project-card card reveal">
+                        <div class="project-preview project-belair">
+                            <div class="belair-art">
+                                <small>QUIET MOTION</small>
+                                <strong>BELAIR</strong>
+                                <span>LESS NOISE.<br>MORE PRESENCE.</span>
+                                <div class="belair-art-line"></div>
+                            </div>
+                            <span class="project-category">BRAND WEBSITE</span>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-title-row">
+                                <h3>Belair</h3>
+                                <span class="project-index">04</span>
+                            </div>
+                            <p>
+                                A refined streetwear brand website concept focused on
+                                visual storytelling, clean presentation and customer enquiries.
+                            </p>
+                            <div class="tag-list"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive UI</span></div>
+                            <a class="project-link" href="#contact">
+                                Ask me about this project <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+
+                
+            </div>
+        </section>
+
+        <section class="section section-light" id="goals"><div class="container">
+            <div class="section-heading reveal"><p class="eyebrow"><span></span> THE BIGGER PICTURE</p><h2>My path towards <span class="gradient-text">technical leadership.</span></h2><p>A long-term roadmap focused on learning deeply, building responsibly and growing through practical experience.</p></div>
+            <div class="roadmap"><div class="roadmap-line"></div><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-laptop-code"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 01</span><h3>Full-Stack Development</h3><p>Strengthen frontend, backend, databases, APIs, testing and deployment by building complete applications.</p><div class="tag-list"><span>Frontend</span><span>Backend</span><span>SQL</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-brain"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 02</span><h3>AI Agent Development</h3><p>Learn to build useful AI-powered tools, connect models to applications and design reliable agent workflows.</p><div class="tag-list"><span>Python</span><span>LLMs</span><span>Agent workflows</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-shield-halved"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 03</span><h3>Cybersecurity Engineering</h3><p>Build a foundation in secure coding, application security, identity, privacy and defensive security.</p><div class="tag-list"><span>Secure coding</span><span>App security</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-mobile-screen-button"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 04</span><h3>Mobile App Development</h3><p>Extend product-building skills to mobile interfaces, device capabilities, APIs and app publishing.</p><div class="tag-list"><span>Mobile UI</span><span>APIs</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-pen-ruler"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 05</span><h3>UI/UX</h3><p>Improve user research, information architecture, accessibility, prototyping and design systems.</p><div class="tag-list"><span>Research</span><span>Prototyping</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-cloud"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 06</span><h3>Cloud</h3><p>Learn cloud infrastructure, deployment, networking, monitoring, reliability and cost-aware operations.</p><div class="tag-list"><span>Cloud</span><span>Linux</span><span>Monitoring</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-diagram-project"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 07</span><h3>System Architecture</h3><p>Design maintainable systems, evaluate trade-offs and plan for performance and resilience.</p><div class="tag-list"><span>System design</span><span>Scalability</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-people-group"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 08</span><h3>Technical Leadership</h3><p>Grow communication, mentoring, collaboration, project planning and engineering decision-making.</p><div class="tag-list"><span>Mentoring</span><span>Planning</span></div></div></article><article class="roadmap-item reveal"><div class="roadmap-marker"><i class="fa-solid fa-bullseye"></i></div><div class="roadmap-card card"><span class="roadmap-stage">STAGE 09 · LONG-TERM GOAL</span><h3>CTO-Level Responsibility</h3><p>Work towards the experience needed to guide technology strategy, engineering teams, architecture and responsible product delivery.</p><div class="tag-list"><span>Strategy</span><span>People</span><span>Technology</span></div></div></article></div>
+            <div class="goal-callout reveal"><span class="goal-callout-icon"><i class="fa-solid fa-compass"></i></span><div><h3>My principle</h3><p>Build strong foundations, practise consistently, learn from real projects and take on greater responsibility as experience grows.</p></div></div>
+        </div></section>
+
+        <!-- CONTACT -->
+        <section class="section contact-section" id="contact">
+            <div class="contact-glow"></div>
+            <div class="container">
+                <div class="contact-card reveal">
+                    <div class="contact-content">
+                        <p class="eyebrow"><span></span> HAVE AN IDEA?</p>
+                        <h2>Let's build something <span class="gradient-text">meaningful.</span></h2>
+                        <p>
+                            Have a project idea, a collaboration in mind or an opportunity
+                            to discuss? Send me an email or connect with me on Instagram.
+                        </p>
+
+                        <div class="contact-actions">
+                            <a class="btn btn-primary" href="mailto:habeebyo29@gmail.com?subject=Let's%20Talk%20-%20Code%20Titan">
+                                <i class="fa-solid fa-envelope"></i> Email me
+                            </a>
+                            <a class="btn btn-outline" href="https://www.instagram.com/habee_byo29/"
+                               target="_blank" rel="noopener noreferrer">
+                                <i class="fa-brands fa-instagram"></i> Instagram
+                            </a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" action="{{ url_for('contact') }}" method="POST">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token }}">
+                        <label for="contactName">Your name</label><input id="contactName" name="name" maxlength="80" autocomplete="name" placeholder="Enter your name" required>
+                        <label for="contactEmail">Email address</label><input id="contactEmail" name="email" type="email" maxlength="120" autocomplete="email" placeholder="you@example.com" required>
+                        <label for="contactSubject">Subject</label><input id="contactSubject" name="subject" maxlength="140" placeholder="What would you like to discuss?">
+                        <label for="contactMessage">Message</label><textarea id="contactMessage" name="message" rows="5" maxlength="5000" placeholder="Write your message..." required></textarea>
+                        <button class="btn btn-primary contact-submit" id="contactSubmit" type="submit"><i class="fa-regular fa-paper-plane"></i> Send message</button>
+                        <p class="form-feedback" id="formFeedback" role="status" aria-live="polite"></p>
+                    </form>
+
+                    <div class="contact-side">
+                        <div class="contact-info-row">
+                            <span><i class="fa-solid fa-envelope"></i></span>
+                            <div><small>EMAIL ADDRESS</small><a href="mailto:habeebyo29@gmail.com">habeebyo29@gmail.com</a></div>
+                        </div>
+                        <div class="contact-info-row">
+                            <span><i class="fa-brands fa-instagram"></i></span>
+                            <div><small>INSTAGRAM</small><a href="https://www.instagram.com/habee_byo29/" target="_blank" rel="noopener noreferrer">@habee_byo29</a></div>
+                        </div>
+                        <div class="contact-info-row">
+                            <span><i class="fa-solid fa-code"></i></span>
+                            <div><small>BRAND</small><strong>Code Titan</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+<!-- ================= CODE TITAN FOOTER ================= -->
+<footer class="ct-footer">
+    <div class="ct-footer-inner">
+
+        <h2 class="ct-brand">Code <span>Titan</span></h2>
+        <p class="ct-tagline">Building ideas into digital experiences.</p>
+
+        <!-- SOCIAL APP LINKS -->
+        <div class="ct-socials">
+
+            <a class="ct-social-link"
+               href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.4 9.5H7v11H3.4v-11Zm5.8 0h3.5V11h.1a3.9 3.9 0 0 1 3.5-1.9c3.7 0 4.4 2.4 4.4 5.5v5.9h-3.7v-5.2c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9v5.3H9.2v-11Z"/>
+                </svg>
+                <span>LinkedIn</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="https://www.instagram.com/habee_byo29/"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="17.6" cy="6.7" r="1.2"/>
+                </svg>
+                <span>Instagram</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="https://github.com/habeebyo29"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="GitHub">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 .8a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.2 1.7 1.2 1 1.7 2.6 1.2 3.3.9.1-.7.4-1.2.7-1.5-2.6-.3-5.3-1.3-5.3-5.6 0-1.2.4-2.2 1.2-3-.1-.3-.5-1.5.1-3 0 0 1-.3 3.1 1.2a10.8 10.8 0 0 1 5.7 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.6 5.3-5.3 5.6.4.3.8 1 .8 2v3.3c0 .3.2.7.8.6A11.2 11.2 0 0 0 12 .8Z"/>
+                </svg>
+                <span>GitHub</span>
+            </a>
+
+            <a class="ct-social-link"
+               href="mailto:habeebyo29@gmail.com"
+               aria-label="Email">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2.5" y="4.5" width="19" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Email</span>
+            </a>
+
+        </div>
+
+        <a class="admin-entry" href="{{ url_for('admin_login') }}">Portfolio admin</a>
+        <button class="ct-back-top" id="ctBackTop" type="button">
+            Back to Top
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 19V5M6 11l6-6 6 6"
+                      fill="none" stroke="currentColor"
+                      stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="ct-footer-bottom">
+            <p>&copy; <span id="currentYear"></span> Code Titan. All rights reserved.</p>
+            <p>Designed and built by <strong>Yusuf Habeeb</strong>.</p>
+        </div>
+
+    </div>
+</footer>
+
+
+
+
+</body>
+</html>
